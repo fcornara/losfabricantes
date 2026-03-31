@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -289,7 +289,7 @@
             font-size: 4rem;
             font-weight: 700;
             color: var(--mid-gray);
-            margin: 6rem 0 3rem;
+            margin: 3rem 0 1.5rem;
             position: relative;
             z-index: 10;
         }
@@ -301,7 +301,7 @@
 
         .timeline-item {
             position: relative;
-            margin-bottom: 3rem;
+            margin-bottom: 1.5rem;
             opacity: 0;
             transform: translateY(30px);
             animation: fadeInUp 0.6s forwards;
@@ -356,30 +356,31 @@
         .timeline-content {
             display: inline-block;
             max-width: 550px;
-            padding: 2rem;
-            background: var(--mid-gray);
-            border-left: 4px solid var(--light-gray);
+            padding: 1.5rem;
+            background: #0d0d0d;
+            border-left: 4px solid var(--green);
             transition: all 0.4s;
         }
 
         .timeline-item.right .timeline-content {
             border-left: none;
-            border-right: 4px solid var(--light-gray);
+            border-right: 4px solid var(--green);
         }
 
         .timeline-content:hover {
-            background: var(--dark-gray);
+            background: #000;
             transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(205, 255, 0, 0.2);
         }
 
         .timeline-item.size-large .timeline-content {
             max-width: 650px;
-            padding: 2.5rem;
+            padding: 2rem;
         }
 
         .timeline-item.size-small .timeline-content {
             max-width: 400px;
-            padding: 1.5rem;
+            padding: 1.2rem;
         }
 
         .timeline-date {
@@ -396,6 +397,7 @@
             font-weight: 700;
             margin-bottom: 0.8rem;
             line-height: 1.2;
+            color: #fff;
         }
 
         .timeline-item.size-large .timeline-title {
@@ -404,7 +406,7 @@
 
         .timeline-subtitle {
             font-size: 1rem;
-            color: #bbb;
+            color: #e0e0e0;
             line-height: 1.6;
         }
 
@@ -447,9 +449,9 @@
         }
 
         .twist-card {
-            background: var(--mid-gray);
-            padding: 3rem;
-            border: 2px solid var(--light-gray);
+            background: #0d0d0d;
+            padding: 2.5rem;
+            border: 2px solid var(--green);
             position: relative;
             overflow: hidden;
             transition: all 0.4s;
@@ -487,6 +489,7 @@
         .twist-card:hover {
             border-color: var(--green);
             transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(205, 255, 0, 0.3);
         }
 
         .twist-date {
@@ -495,7 +498,7 @@
             color: var(--green);
             line-height: 1;
             margin-bottom: 1.5rem;
-            opacity: 0.3;
+            opacity: 0.4;
         }
 
         .twist-title {
@@ -503,6 +506,7 @@
             font-weight: 700;
             margin-bottom: 1rem;
             line-height: 1.1;
+            color: #fff;
         }
 
         .twist-subtitle {
@@ -516,7 +520,7 @@
         .twist-scene {
             font-size: 1.1rem;
             line-height: 1.7;
-            color: #ccc;
+            color: #e0e0e0;
             margin-bottom: 2rem;
         }
 
@@ -557,8 +561,8 @@
         }
 
         .postura-item {
-            background: var(--mid-gray);
-            border: 1px solid var(--light-gray);
+            background: #0d0d0d;
+            border: 1px solid var(--green);
             overflow: hidden;
             transition: all 0.4s;
         }
@@ -566,23 +570,24 @@
         .postura-header {
             padding: 2rem;
             cursor: pointer;
-            background: var(--dark-gray);
+            background: #000;
             transition: all 0.3s;
         }
 
         .postura-header:hover {
-            background: var(--mid-gray);
+            background: #0d0d0d;
         }
 
         .postura-title {
             font-size: 1.8rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
+            color: #fff;
         }
 
         .postura-hint {
             font-size: 0.9rem;
-            color: #666;
+            color: #888;
             text-transform: uppercase;
             letter-spacing: 0.05em;
         }
@@ -605,13 +610,13 @@
         }
 
         .postura-card {
-            background: var(--mid-gray);
+            background: #0d0d0d;
             padding: 2.5rem;
             transition: all 0.4s;
         }
 
         .postura-card:hover {
-            background: var(--dark-gray);
+            background: #000;
         }
 
         .postura-name {
@@ -632,11 +637,12 @@
             line-height: 1.6;
             font-style: italic;
             margin-bottom: 1.5rem;
+            color: #fff;
         }
 
         .postura-source {
             font-size: 0.85rem;
-            color: #666;
+            color: #888;
         }
 
         /* CIERRE */
@@ -787,13 +793,23 @@
             <h2 class="section-title">QUIEBRES</h2>
             
             <div class="filters">
-                <span class="filter-label">Filtrar por:</span>
-                <button class="filter-btn filter-twist-tag active" data-tag="all">Todos</button>
-                <button class="filter-btn filter-twist-tag" data-tag="ruptura">Ruptura</button>
-                <button class="filter-btn filter-twist-tag" data-tag="poder">Poder</button>
-                <button class="filter-btn filter-twist-tag" data-tag="decisión">Decisión</button>
-                <button class="filter-btn filter-twist-tag" data-tag="conflicto">Conflicto</button>
-                <button class="filter-btn filter-twist-tag" data-tag="visión">Visión</button>
+                <div class="filter-group">
+                    <span class="filter-label">Protagonista:</span>
+                    <button class="filter-btn filter-twist-actor active" data-actor="all">Todos</button>
+                    <button class="filter-btn filter-twist-actor actor-altman" data-actor="altman">Altman</button>
+                    <button class="filter-btn filter-twist-actor actor-amodei" data-actor="amodei">Amodei</button>
+                    <button class="filter-btn filter-twist-actor actor-musk" data-actor="musk">Musk</button>
+                </div>
+                
+                <div class="filter-group">
+                    <span class="filter-label">Etiqueta:</span>
+                    <button class="filter-btn filter-twist-tag active" data-tag="all">Todos</button>
+                    <button class="filter-btn filter-twist-tag" data-tag="ruptura">Ruptura</button>
+                    <button class="filter-btn filter-twist-tag" data-tag="poder">Poder</button>
+                    <button class="filter-btn filter-twist-tag" data-tag="decisión">Decisión</button>
+                    <button class="filter-btn filter-twist-tag" data-tag="conflicto">Conflicto</button>
+                    <button class="filter-btn filter-twist-tag" data-tag="visión">Visión</button>
+                </div>
             </div>
         </div>
 
@@ -877,19 +893,19 @@
         ];
 
         const twistsData = [
-            { date: "Ene 2018", title: "Musk quiere quedarse con todo", subtitle: "El equilibrio se rompe antes de que la historia empiece de verdad.", scene: "Musk propone tomar el control total de OpenAI y llevarla a Tesla. No plantea una discusión técnica, plantea una conducción única. La junta se niega. A los pocos días se va. Con él se va también el dinero.", tags: ["ruptura", "poder", "fundación"] },
-            { date: "Feb 2018", title: "Musk se va y empieza a hablar", subtitle: "El silencio dura poco. La narrativa arranca años después.", scene: "Musk se retira formalmente. Durante un tiempo parece correrse. Después empieza a construir otra versión de la historia: OpenAI como proyecto desviado, capturado, traicionado.", tags: ["declaración", "conflicto", "narrativa"] },
-            { date: "Mar 2019", title: "OpenAI cambia de naturaleza", subtitle: "La misión necesita dinero y el dinero cambia la misión.", scene: "Altman redefine la estructura. OpenAI deja de ser solo non-profit. Entra Microsoft. La infraestructura, la escala, la velocidad. Todo empieza a alinearse con eso.", tags: ["empresa", "decisión", "estructura"] },
-            { date: "Dic 2020", title: "Amodei se lleva el corazón técnico", subtitle: "No es una renuncia. Es una migración.", scene: "Dario Amodei y un grupo de investigadores clave se van. No hay pelea pública. Hay un corte silencioso. Se llevan conocimiento, relaciones, credibilidad.", tags: ["ruptura", "investigación", "exodus"] },
-            { date: "Nov 18-21 2023", title: "La guerra se vuelve interna", subtitle: "No hay neutrales.", scene: "Más del 90% de empleados amenaza con renunciar. Microsoft ofrece absorberlos. La presión se vuelve insostenible.", tags: ["crisis", "lealtad", "poder"] },
-            { date: "Nov 22 2023", title: "Altman vuelve más fuerte", subtitle: "El golpe fracasa.", scene: "Regresa como CEO. Nueva junta alineada. Sale con más poder que antes. La estructura de control cambia definitivamente.", tags: ["retorno", "poder", "reestructura"] },
-            { date: "Oct 2024", title: "Amodei escribe el futuro", subtitle: "Pero con condiciones.", scene: "Publica 'Machines of Loving Grace'. Describe un futuro utópico con IA. Pero advierte: solo bajo condiciones de control estricto.", tags: ["ensayo", "visión", "utopía"] },
-            { date: "Ene 2026", title: "El Pentágono pone condiciones", subtitle: "El poder político entra sin matices.", scene: "Exigen acceso sin restricciones. Uso militar abierto. La negociación no es técnica. Es directa.", tags: ["estado", "presión", "poder"] },
-            { date: "Ene 2026", title: "Anthropic dice que no", subtitle: "Una decisión que corta el flujo.", scene: "Amodei rechaza el contrato. No acepta eliminar límites. La empresa queda expuesta.", tags: ["decisión", "ética", "conflicto"] },
-            { date: "Feb 2026", title: "OpenAI ocupa el lugar", subtitle: "El espacio no queda vacío.", scene: "Horas después, OpenAI firma. Altman entra donde Anthropic se retiró. Sin pausa.", tags: ["decisión", "poder", "oportunidad"] },
-            { date: "Feb 2026", title: "Musk dispara contra todos", subtitle: "La discusión se vuelve ideológica.", scene: "Habla de IA woke. Ataca a Anthropic. Llama a OpenAI una mentira. Se posiciona como alternativa sin filtros.", tags: ["declaración", "conflicto", "ideología"] },
-            { date: "Mar 2026", title: "La adolescencia de la tecnología", subtitle: "La IA ya no es una herramienta. Es un sistema inestable.", scene: "Amodei publica su ensayo. Habla de una tecnología poderosa y todavía inmadura. De riesgos que no se pueden corregir después.", tags: ["ensayo", "visión", "riesgo"] },
-            { date: "2026", title: "Nadie está de acuerdo en nada", subtitle: "Comparten el diagnóstico. No el camino.", scene: "Todos dicen que la IA va a cambiar todo. Ninguno propone lo mismo. Las diferencias ya no se pueden disimular.", tags: ["visión", "conflicto", "futuro"] }
+            { date: "Ene 2018", title: "Musk quiere quedarse con todo", subtitle: "El equilibrio se rompe antes de que la historia empiece de verdad.", scene: "Musk propone tomar el control total de OpenAI y llevarla a Tesla. No plantea una discusión técnica, plantea una conducción única. La junta se niega. A los pocos días se va. Con él se va también el dinero.", tags: ["ruptura", "poder", "fundación"], actors: ["musk", "altman"] },
+            { date: "Feb 2018", title: "Musk se va y empieza a hablar", subtitle: "El silencio dura poco. La narrativa arranca años después.", scene: "Musk se retira formalmente. Durante un tiempo parece correrse. Después empieza a construir otra versión de la historia: OpenAI como proyecto desviado, capturado, traicionado.", tags: ["declaración", "conflicto", "narrativa"], actors: ["musk"] },
+            { date: "Mar 2019", title: "OpenAI cambia de naturaleza", subtitle: "La misión necesita dinero y el dinero cambia la misión.", scene: "Altman redefine la estructura. OpenAI deja de ser solo non-profit. Entra Microsoft. La infraestructura, la escala, la velocidad. Todo empieza a alinearse con eso.", tags: ["empresa", "decisión", "estructura"], actors: ["altman"] },
+            { date: "Dic 2020", title: "Amodei se lleva el corazón técnico", subtitle: "No es una renuncia. Es una migración.", scene: "Dario Amodei y un grupo de investigadores clave se van. No hay pelea pública. Hay un corte silencioso. Se llevan conocimiento, relaciones, credibilidad.", tags: ["ruptura", "investigación", "exodus"], actors: ["amodei"] },
+            { date: "Nov 18-21 2023", title: "La guerra se vuelve interna", subtitle: "No hay neutrales.", scene: "Más del 90% de empleados amenaza con renunciar. Microsoft ofrece absorberlos. La presión se vuelve insostenible.", tags: ["crisis", "lealtad", "poder"], actors: ["altman"] },
+            { date: "Nov 22 2023", title: "Altman vuelve más fuerte", subtitle: "El golpe fracasa.", scene: "Regresa como CEO. Nueva junta alineada. Sale con más poder que antes. La estructura de control cambia definitivamente.", tags: ["retorno", "poder", "reestructura"], actors: ["altman"] },
+            { date: "Oct 2024", title: "Amodei escribe el futuro", subtitle: "Pero con condiciones.", scene: "Publica 'Machines of Loving Grace'. Describe un futuro utópico con IA. Pero advierte: solo bajo condiciones de control estricto.", tags: ["ensayo", "visión", "utopía"], actors: ["amodei"] },
+            { date: "Ene 2026", title: "El Pentágono pone condiciones", subtitle: "El poder político entra sin matices.", scene: "Exigen acceso sin restricciones. Uso militar abierto. La negociación no es técnica. Es directa.", tags: ["estado", "presión", "poder"], actors: ["amodei"] },
+            { date: "Ene 2026", title: "Anthropic dice que no", subtitle: "Una decisión que corta el flujo.", scene: "Amodei rechaza el contrato. No acepta eliminar límites. La empresa queda expuesta.", tags: ["decisión", "ética", "conflicto"], actors: ["amodei"] },
+            { date: "Feb 2026", title: "OpenAI ocupa el lugar", subtitle: "El espacio no queda vacío.", scene: "Horas después, OpenAI firma. Altman entra donde Anthropic se retiró. Sin pausa.", tags: ["decisión", "poder", "oportunidad"], actors: ["altman"] },
+            { date: "Feb 2026", title: "Musk dispara contra todos", subtitle: "La discusión se vuelve ideológica.", scene: "Habla de IA woke. Ataca a Anthropic. Llama a OpenAI una mentira. Se posiciona como alternativa sin filtros.", tags: ["declaración", "conflicto", "ideología"], actors: ["musk"] },
+            { date: "Mar 2026", title: "La adolescencia de la tecnología", subtitle: "La IA ya no es una herramienta. Es un sistema inestable.", scene: "Amodei publica su ensayo. Habla de una tecnología poderosa y todavía inmadura. De riesgos que no se pueden corregir después.", tags: ["ensayo", "visión", "riesgo"], actors: ["amodei"] },
+            { date: "2026", title: "Nadie está de acuerdo en nada", subtitle: "Comparten el diagnóstico. No el camino.", scene: "Todos dicen que la IA va a cambiar todo. Ninguno propone lo mismo. Las diferencias ya no se pueden disimular.", tags: ["visión", "conflicto", "futuro"], actors: ["altman", "amodei", "musk"] }
         ];
 
         const posturasData = [
@@ -909,6 +925,7 @@
         // STATE
         let currentActorFilter = 'all';
         let currentTypeFilter = 'all';
+        let currentTwistActorFilter = 'all';
         let currentTwistTagFilter = 'all';
 
         // RENDER FUNCTIONS
@@ -962,7 +979,9 @@
             grid.innerHTML = '';
             
             const filteredData = twistsData.filter(item => {
-                return currentTwistTagFilter === 'all' || item.tags.includes(currentTwistTagFilter);
+                const actorMatch = currentTwistActorFilter === 'all' || item.actors.some(actor => actor === currentTwistActorFilter);
+                const tagMatch = currentTwistTagFilter === 'all' || item.tags.includes(currentTwistTagFilter);
+                return actorMatch && tagMatch;
             });
             
             filteredData.forEach((item, index) => {
@@ -990,7 +1009,10 @@
                 tag.addEventListener('click', (e) => {
                     e.stopPropagation();
                     const tagValue = tag.dataset.tag;
-                    filterTwistsByTag(tagValue);
+                    currentTwistTagFilter = tagValue;
+                    document.querySelectorAll('.filter-twist-tag').forEach(b => b.classList.remove('active'));
+                    document.querySelector(`.filter-twist-tag[data-tag="${tagValue}"]`).classList.add('active');
+                    renderTwists();
                 });
             });
         }
@@ -1034,33 +1056,6 @@
         }
 
         // FILTER FUNCTIONS
-        function filterTimelineByActor(actor) {
-            currentActorFilter = actor;
-            document.querySelectorAll('.filter-actor').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-            renderTimeline();
-        }
-
-        function filterTimelineByType(type) {
-            currentTypeFilter = type;
-            document.querySelectorAll('.filter-type').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            event.target.classList.add('active');
-            renderTimeline();
-        }
-
-        function filterTwistsByTag(tag) {
-            currentTwistTagFilter = tag;
-            document.querySelectorAll('.filter-twist-tag').forEach(btn => {
-                btn.classList.remove('active');
-            });
-            document.querySelector(`.filter-twist-tag[data-tag="${tag}"]`).classList.add('active');
-            renderTwists();
-        }
-
         function togglePostura(index) {
             const content = document.getElementById(`postura-${index}`);
             content.classList.toggle('expanded');
@@ -1082,6 +1077,15 @@
                 document.querySelectorAll('.filter-type').forEach(b => b.classList.remove('active'));
                 btn.classList.add('active');
                 renderTimeline();
+            });
+        });
+
+        document.querySelectorAll('.filter-twist-actor').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                currentTwistActorFilter = btn.dataset.actor;
+                document.querySelectorAll('.filter-twist-actor').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderTwists();
             });
         });
 
