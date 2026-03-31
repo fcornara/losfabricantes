@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -202,11 +203,12 @@
         }
 
         .section-title {
-            font-size: clamp(3rem, 8vw, 6rem);
+            font-size: clamp(4rem, 12vw, 9rem);
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: -0.03em;
-            margin-bottom: 2rem;
+            letter-spacing: -0.04em;
+            margin-bottom: 3rem;
+            line-height: 0.9;
             background: linear-gradient(to right, var(--white) 0%, var(--green) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -287,10 +289,13 @@
             text-align: center;
             font-size: 4rem;
             font-weight: 700;
-            color: var(--mid-gray);
             margin: 3rem 0 1.5rem;
             position: relative;
             z-index: 10;
+            background: linear-gradient(135deg, var(--altman), var(--amodei), var(--musk), var(--green));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
         .timeline-year span {
@@ -789,7 +794,7 @@
     <!-- PLOT TWISTS -->
     <section class="section twists-section">
         <div class="section-header">
-            <h2 class="section-title">QUIEBRES</h2>
+            <h2 class="section-title">PLOT TWISTS</h2>
             
             <div class="filters">
                 <div class="filter-group">
@@ -818,7 +823,7 @@
     <!-- POSTURAS -->
     <section class="section posturas-section">
         <div class="section-header">
-            <h2 class="section-title">POSICIONES</h2>
+            <h2 class="section-title">NARRATIVAS</h2>
         </div>
 
         <div class="posturas-grid" id="posturas-grid"></div>
